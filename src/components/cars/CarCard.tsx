@@ -48,14 +48,19 @@ export const CarCard: React.FC<CarCardProps> = ({ car }) => {
       {/* Card Content */}
       <div className="flex flex-col flex-1 p-5 md:p-6 justify-between">
         <div>
-          {/* Brand & Year Header */}
-          <div className="flex items-center justify-between mb-1.5">
+          {/* Brand, Year & Color Header */}
+          <div className="flex items-center justify-between mb-1.5 flex-wrap gap-1">
             <span className="text-xs font-bold uppercase tracking-wider text-gold-500">
               {car.brand}
             </span>
-            <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-gold-500/10 text-gold-400 border border-gold-500/20">
-              {car.modelYear}
-            </span>
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] font-semibold px-2 py-0.5 rounded-md bg-obsidian-900 text-neutral-300 border border-gold-500/15">
+                {lang === "ar" ? car.colorAr : car.colorEn}
+              </span>
+              <span className="text-xs font-semibold px-2 py-0.5 rounded-md bg-gold-500/10 text-gold-400 border border-gold-500/20">
+                {car.modelYear}
+              </span>
+            </div>
           </div>
 
           {/* Car Title */}
